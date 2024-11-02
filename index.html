@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>The Gambit Roll</title>
+  </head>
+  <body>
+    <div class="what">
+      <button class="show-rules">!?</button>
+    </div>
+    <main>
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="Assets/dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new">🔄 New game</button>
+      <button class="btn btn--roll">🎲 Roll dice</button>
+      <button class="btn btn--hold">📥 Hold</button>
+    </main>
+
+    <!-- ---------rules modal ----------- -->
+    <div class="rules-modal-content hidden">
+      <div class="rules-container">
+        <h1>The Gambit Roll</h1>
+        <p class="highlight-box">An exciting digital dice game for 2 players</p>
+
+        <h2>Game Overview</h2>
+        <p>
+          This is a digital game where two players take turns rolling a virtual
+          die, trying to be the first to reach 100 points. Player 1 always
+          starts the game.
+        </p>
+
+        <h2>Objective</h2>
+        <p class="highlight-box">
+          Be the first player to reach or exceed 100 points in your total score.
+        </p>
+
+        <h2>How to Play</h2>
+
+        <h3>Turn Structure</h3>
+        <ol>
+          <li>
+            On your turn, you can:
+            <ul>
+              <li>Click "Roll" to roll the virtual die</li>
+              <li>
+                Click "Hold" to add your current turn's points to your total
+                score
+              </li>
+            </ul>
+          </li>
+          <li>
+            When you roll the die:
+            <ul>
+              <li>
+                If you roll 2-6: That number is added to your Current Score
+              </li>
+              <li>
+                If you roll 1: You lose all points from this turn and your turn
+                ends
+              </li>
+            </ul>
+          </li>
+          <li>
+            After each successful roll (2-6), you must choose:
+            <ul>
+              <li>
+                Roll Again: Try to accumulate more points (but risk losing them)
+              </li>
+              <li>
+                Hold: Add your Current Score to your Total Score and end your
+                turn
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3>Turn Example</h3>
+        <div class="example">
+          <strong>Player 1's Turn:</strong>
+          <ul>
+            <li>Rolls a 3 (Current Score = 3)</li>
+            <li>Rolls a 5 (Current Score = 8)</li>
+            <li>Rolls a 6 (Current Score = 14)</li>
+            <li>Clicks "Hold"</li>
+            <li>14 points are added to Total Score</li>
+            <li>Turn passes to Player 2</li>
+          </ul>
+        </div>
+
+        <h3>Losing Your Turn</h3>
+        <div class="highlight-box warning">
+          <p>If you roll a 1:</p>
+          <ul>
+            <li>Your Current Score becomes 0</li>
+            <li>You lose all points accumulated during this turn</li>
+            <li>Your turn ends immediately</li>
+            <li>Play passes to the other player</li>
+          </ul>
+        </div>
+
+        <h2>Winning the Game</h2>
+        <ul>
+          <li>
+            The game ends immediately when a player's Total Score reaches or
+            exceeds 100 points
+          </li>
+          <li>That player is declared the winner</li>
+        </ul>
+
+        <h2>Strategic Tips</h2>
+        <ul>
+          <li>Each roll is a risk vs. reward decision</li>
+          <li>
+            The more points you accumulate in your Current Score, the more you
+            risk losing
+          </li>
+          <li>Consider playing more conservatively when you're ahead</li>
+          <li>Take more risks when you're behind</li>
+        </ul>
+
+        <div class="quick-reference">
+          <h2>Quick Reference</h2>
+          <ul>
+            <li>Player 1 always starts first</li>
+            <li>Target Score: 100 points</li>
+            <li>Lose turn: Roll a 1</li>
+            <li>Turn options: Roll Again or Hold</li>
+            <li>Game ends: When a player reaches 100+ points</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------overlay --------- -->
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
